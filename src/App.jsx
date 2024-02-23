@@ -26,6 +26,7 @@ const App = () => {
     if (!selectedFilter.includes(filter)) {
       setSelectedFilter([...selectedFilter, filter]);
     }
+    setCurrentPage(1);
   }
 
   // console.log(selectedFilter);
