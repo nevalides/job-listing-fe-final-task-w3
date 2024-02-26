@@ -1,9 +1,10 @@
 import React from 'react'
 import FilterButton from './FilterButton'
+import { Link } from 'react-router-dom';
 
-const JoblistContainer = ({jobData, onClick}) => {
+const JoblistContainer = ({index, jobData, onClick}) => {
   return (
-    <li
+    <li key={index}
         className={`relative bg-white p-7 rounded-md flex items-center gap-6 shadow-lg mb-12 lg:mb-6`}
     >
         <div className="absolute -top-7 w-14 lg:relative lg:w-auto lg:top-0">
@@ -22,12 +23,9 @@ const JoblistContainer = ({jobData, onClick}) => {
                         FEATURED
                     </span>}
                 </div>
-                <a
-                    href="#"
-                    className="block my-1 text-base font-bold hover:text-cyan-dark"
-                >
-                    {jobData.position}
-                </a>
+                <div className="block my-1 text-base font-bold hover:text-cyan-dark">
+                    <Link to={`/job/${jobData.id}`}>{jobData.position}</Link>
+                </div>
                 <ul className="flex text-cyan-dark-grayish gap-4 text-sm font-medium">
                     <li>{jobData.postedAt}</li>
                     <li className="before:content-['•'] before:mr-3 after:content-['•'] after:ml-3">
