@@ -15,9 +15,11 @@ export default function Home() {
             out, discover exciting roles in tech hubs across the globe
           </p>
           <div className="flex justify-center">
-            <button className="bg-cyan-dark hover:bg-[#eac77d] text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
-                <Link to={'/job'}>Start Your Journey Now!</Link>
-            </button>
+            <Link to={'/job'}>
+              <button className="bg-cyan-dark hover:bg-[#eac77d] text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                  Start Your Journey Now!
+              </button>
+            </Link>
           </div>
         </main>
         <img
