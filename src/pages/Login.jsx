@@ -31,7 +31,8 @@ export default function Login() {
         }
       })
       .catch((error) => {
-        console.error("Error:", error);
+        alert("Please enter your credentials");
+        // console.error("Error:", error);
       });
   };
 
