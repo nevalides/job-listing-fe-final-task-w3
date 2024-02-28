@@ -1,17 +1,24 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   // const navigate = useNavigate("/");
+  //   const userData = {
+  //     username: "johnd",
+  //     password: "m38rmF$",
+  //   };
 
-  const userData = {
-    username: "johnd",
-    password: "m38rmF$",
-  };
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const userData = {
+      username: username,
+      password: password,
+    };
 
     axios
       .post("https://fakestoreapi.com/auth/login", userData)
@@ -55,7 +62,9 @@ export default function Login() {
                 name="username"
                 className="form-control"
                 id="username"
-                value={userData.username}
+                placeholder="Username"
+                onChange={(e) => setUsername(e.target.value)}
+                value={username}
               />
             </div>
             <div className="mb-3">
@@ -71,7 +80,9 @@ export default function Login() {
                 name="password"
                 className="form-control"
                 id="password"
-                value={userData.password}
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
               />
             </div>
             <div className="flex justify-center">
